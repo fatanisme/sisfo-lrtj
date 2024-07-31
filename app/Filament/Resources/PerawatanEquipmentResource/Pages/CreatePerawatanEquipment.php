@@ -27,6 +27,9 @@ class CreatePerawatanEquipment extends CreateRecord
         $intervals = [
             "Perawatan harian" => 1,
             "Perawatan Mingguan" => 7,
+            "Perawatan Bulanan" => 30,
+            "Perawatan 3 bulanan" => 90,
+            "Perawatan 6 bulanan" => 180,
         ];
 
         if (array_key_exists($statusPerawatan, $intervals)) {
