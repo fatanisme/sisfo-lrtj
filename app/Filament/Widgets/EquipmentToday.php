@@ -20,7 +20,7 @@ class EquipmentToday extends BaseWidget
         return $table
             ->query(
                 PerawatanEquipment::query()
-                    ->where('tgl_perawatan', Carbon::now()->toDateString())
+                    ->where('tgl_perawatan', Carbon::today()->toDateString())
                     ->orderBy('tgl_perawatan', 'asc')
             )
             ->defaultPaginationPageOption(5)
