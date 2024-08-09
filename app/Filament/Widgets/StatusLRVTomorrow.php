@@ -21,7 +21,7 @@ class StatusLRVTomorrow extends BaseWidget
         return $table
             ->query(
                 Stamformasi::query()
-                    ->where('tgl_stamformasi', Carbon::today()->addDays(2)->toDateString())
+                    ->where('tgl_stamformasi', Carbon::tomorrow()->toDateString())
                     ->orderBy('tgl_stamformasi', 'asc')
             )
             ->defaultPaginationPageOption(5)
