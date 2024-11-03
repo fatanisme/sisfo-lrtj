@@ -110,7 +110,12 @@ class PendinasanResource extends Resource
                 Tables\Columns\TextColumn::make('tgl_pendinasan')->sortable()->date('d-F-Y'),
                 Tables\Columns\TextColumn::make('lrv.lrv')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor KA')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('status_pendinasan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('status_pendinasan')->sortable()->searchable()->badge()->color(fn(string $state): string => match ($state) {
+                    'Tidak Siap Operasi' => 'danger',
+                    'Siap Operasi' => 'success',
+                    'Cadangan' => 'success',
+                    default => 'warning',
+                }),
                 Tables\Columns\TextColumn::make('location')->sortable()->searchable(),
             ])
             ->filters([
@@ -123,8 +128,8 @@ class PendinasanResource extends Resource
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         return $query
-                            ->when($data['created_from'], fn ($query, $date) => $query->whereDate('tgl_pendinasan', '>=', $date))
-                            ->when($data['created_until'], fn ($query, $date) => $query->whereDate('tgl_pendinasan', '<=', $date));
+                            ->when($data['created_from'], fn($query, $date) => $query->whereDate('tgl_pendinasan', '>=', $date))
+                            ->when($data['created_until'], fn($query, $date) => $query->whereDate('tgl_pendinasan', '<=', $date));
                     }),
             ])
             ->actions([

@@ -84,7 +84,12 @@ class StamformasiResource extends Resource
                 Tables\Columns\TextColumn::make('tgl_stamformasi')->date('d-F-Y')->sortable(),
                 Tables\Columns\TextColumn::make('lrv.lrv')->label('LRV')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor KA')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('status_pendinasan')->label('Status Pendinasan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('status_pendinasan')->sortable()->searchable()->badge()->color(fn(string $state): string => match ($state) {
+                    'Tidak Siap Operasi' => 'danger',
+                    'Siap Operasi' => 'success',
+                    'Cadangan' => 'success',
+                    default => 'warning',
+                }),
                 Tables\Columns\TextColumn::make('user.name')->label('Created By')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('last_modified')->date('d-m-Y H:m:s')->label('Last Modified')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('keterangan')->label('Keterangan')->sortable()->searchable(),
@@ -99,8 +104,8 @@ class StamformasiResource extends Resource
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         return $query
-                            ->when($data['created_from'], fn ($query, $date) => $query->whereDate('tgl_stamformasi', '>=', $date))
-                            ->when($data['created_until'], fn ($query, $date) => $query->whereDate('tgl_stamformasi', '<=', $date));
+                            ->when($data['created_from'], fn($query, $date) => $query->whereDate('tgl_stamformasi', '>=', $date))
+                            ->when($data['created_until'], fn($query, $date) => $query->whereDate('tgl_stamformasi', '<=', $date));
                     }),
             ])
             ->actions([

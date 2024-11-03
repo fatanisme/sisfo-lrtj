@@ -34,8 +34,12 @@ class StatusLRVTomorrow extends BaseWidget
                 Tables\Columns\TextColumn::make('tgl_stamformasi')
                     ->label('Tanggal')
                     ->date(),
-                Tables\Columns\TextColumn::make('status_pendinasan')
-                    ->label('Status Pendinasan'),
+                Tables\Columns\TextColumn::make('status_pendinasan')->badge()->color(fn(string $state): string => match ($state) {
+                    'Tidak Siap Operasi' => 'danger',
+                    'Siap Operasi' => 'success',
+                    'Cadangan' => 'success',
+                    default => 'warning',
+                }),
                 Tables\Columns\TextColumn::make('last_modified')
                     ->label('Last Modified'),
 
