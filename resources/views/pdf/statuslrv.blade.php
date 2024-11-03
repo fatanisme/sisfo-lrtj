@@ -80,7 +80,7 @@
             <tr>
                 <th>Tanggal</th>
                 <th>LRV</th>
-                <th>Nomor KA</th>
+                <th>Nomor Trainset</th>
                 <th>Status Pendinasan</th>
                 <th>Created By</th>
                 <th>Keterangan</th>

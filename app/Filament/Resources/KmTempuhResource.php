@@ -21,8 +21,11 @@ class KmTempuhResource extends Resource
 {
     protected static ?string $model = KmTempuh::class;
 
+    protected static ?string $title = 'KmTempuh';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationLabel = 'KM Tempuh';
+    protected static ?string $navigationLabel = 'KmTempuh';
+    protected static ?int $navigationSort = 10;
+    protected static ?string $slug = 'kmtempuh';
     protected static ?string $navigationGroup = 'Master Data';
 
     protected static bool $shouldRegisterNavigation = false;

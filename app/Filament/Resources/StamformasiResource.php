@@ -33,7 +33,7 @@ class StamformasiResource extends Resource
     {
         $lrvOptions = LRV::all()->mapWithKeys(function ($item) {
             return [$item->id => $item->lrv . ' | ' . $item->nomor_ka];
-        })->prepend('Pilih LRV | Nomor KA', '');
+        })->prepend('Pilih LRV | Nomor Trainset', '');
 
         $userId = Auth()->id();
         return $form
@@ -83,7 +83,7 @@ class StamformasiResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('tgl_stamformasi')->date('d-F-Y')->sortable(),
                 Tables\Columns\TextColumn::make('lrv.lrv')->label('LRV')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor KA')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor Trainset')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('status_pendinasan')->sortable()->searchable()->badge()->color(fn(string $state): string => match ($state) {
                     'Tidak Siap Operasi' => 'danger',
                     'Siap Operasi' => 'success',

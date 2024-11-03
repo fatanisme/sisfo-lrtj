@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('sistem_utama')->nullable();
             $table->string('perangkat_spesifik')->nullable();
             $table->string('deskripsi_fault')->nullable();
-            $table->string('pelapor_inspeksi')->nullable();
+            $table->string('status_maximo')->nullable();
             $table->string('service_request')->nullable();
             $table->string('status_action')->nullable();
             $table->string('tindak_lanjut')->nullable();

@@ -34,7 +34,7 @@ class LRVResource extends Resource
                     ->autofocus()
                     ->required(),
                 Forms\Components\TextInput::make('nomor_ka')
-                    ->label('Nomor KA')
+                    ->label('Nomor Trainsets')
                     ->autofocus()
                     ->required(),
             ]);
@@ -45,7 +45,7 @@ class LRVResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('lrv')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('nomor_ka')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('nomor_ka')->label('Nomor Trainset')->sortable()->searchable(),
             ])
             ->filters([
                 //

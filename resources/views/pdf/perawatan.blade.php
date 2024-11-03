@@ -79,7 +79,7 @@
         <thead>
             <tr>
                 <th>LRV</th>
-                <th>Nomor KA</th>
+                <th>Nomor Trainset</th>
                 <th>Jenis Perawatan</th>
                 <th>Tanggal Rencana Perawatan</th>
             </tr>

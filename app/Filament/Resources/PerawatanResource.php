@@ -71,7 +71,7 @@ class PerawatanResource extends Resource
                 Tables\Columns\TextColumn::make('tgl_perawatan')->date('d-F-Y')->sortable(),
                 Tables\Columns\TextColumn::make('jenis_perawatan')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('lrv.lrv')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor KA')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor Trainset')->sortable()->searchable(),
             ])
             ->filters(
                 [
@@ -84,8 +84,8 @@ class PerawatanResource extends Resource
                         ])
                         ->query(function (Builder $query, array $data): Builder {
                             return $query
-                                ->when($data['created_from'], fn ($query, $date) => $query->whereDate('tgl_perawatan', '>=', $date))
-                                ->when($data['created_until'], fn ($query, $date) => $query->whereDate('tgl_perawatan', '<=', $date));
+                                ->when($data['created_from'], fn($query, $date) => $query->whereDate('tgl_perawatan', '>=', $date))
+                                ->when($data['created_until'], fn($query, $date) => $query->whereDate('tgl_perawatan', '<=', $date));
                         }),
                 ]
             )

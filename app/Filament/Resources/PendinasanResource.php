@@ -109,7 +109,7 @@ class PendinasanResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('tgl_pendinasan')->sortable()->date('d-F-Y'),
                 Tables\Columns\TextColumn::make('lrv.lrv')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor KA')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('lrv.nomor_ka')->label('Nomor Trainset')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('status_pendinasan')->sortable()->searchable()->badge()->color(fn(string $state): string => match ($state) {
                     'Tidak Siap Operasi' => 'danger',
                     'Siap Operasi' => 'success',

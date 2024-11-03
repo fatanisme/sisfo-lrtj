@@ -29,7 +29,7 @@ class StatusLRVToday extends BaseWidget
                 Tables\Columns\TextColumn::make('lrv.lrv')
                     ->label('LRV'),
                 Tables\Columns\TextColumn::make('lrv.nomor_ka')
-                    ->label('Nomor KA'),
+                    ->label('Nomor Trainset'),
                 Tables\Columns\TextColumn::make('tgl_stamformasi')
                     ->label('Tanggal')
                     ->date(),
