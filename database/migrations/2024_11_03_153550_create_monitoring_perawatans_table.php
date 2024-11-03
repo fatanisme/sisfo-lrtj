@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('monitoring_perawatans', function (Blueprint $table) {
             $table->id();
-            $table->date('tgl_perawatan');
-            $table->string('jenis_perawatan');
-            $table->string('durasi');
-            $table->string('persentase_penyelesaian');
-            $table->string('status');
-            $table->string('keterangan');
+            $table->dateTime('tgl_perawatan');
+            $table->string('jenis_perawatan')->nullable();
+            $table->string('durasi')->nullable();
+            $table->string('persentase_penyelesaian')->nullable();
+            $table->string('status')->nullable();
+            $table->string('keterangan')->nullable();
             $table->foreignId('lrv_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
