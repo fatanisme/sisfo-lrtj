@@ -21,11 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $appEnv = config('app.env', 'production');
-
-        if ($appEnv === 'production') {
-            \URL::forceScheme('https');
-        }
+        \URL::forceScheme('https');
         Model::unguard();
     }
 }
