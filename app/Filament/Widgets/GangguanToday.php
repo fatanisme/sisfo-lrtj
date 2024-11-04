@@ -26,22 +26,22 @@ class GangguanToday extends BaseWidget
             ->defaultPaginationPageOption(5)
             ->defaultSort('tgl_gangguan', 'desc')
             ->columns([
-                Tables\Columns\TextColumn::make('tgl_gangguan')->translateLabel()->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('lrv.lrv')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('kabin')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('informasi_gangguan')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('andil_keterlambatan')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('sistem_utama')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('perangkat_spesifik')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('deskripsi_fault')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('status_maximo')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('service_request')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('status_action')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('tindak_lanjut')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('action_date')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('close_date')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('penggunaan_sparepart')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('keterangan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('tgl_gangguan')->date('d-m-Y'),
+                Tables\Columns\TextColumn::make('lrv.lrv'),
+                Tables\Columns\TextColumn::make('kabin'),
+                Tables\Columns\TextColumn::make('informasi_gangguan'),
+                Tables\Columns\TextColumn::make('andil_keterlambatan'),
+                Tables\Columns\TextColumn::make('sistem_utama'),
+                Tables\Columns\TextColumn::make('perangkat_spesifik'),
+                Tables\Columns\TextColumn::make('deskripsi_fault'),
+                Tables\Columns\TextColumn::make('status_maximo'),
+                Tables\Columns\TextColumn::make('service_request'),
+                Tables\Columns\TextColumn::make('status_action'),
+                Tables\Columns\TextColumn::make('tindak_lanjut'),
+                Tables\Columns\TextColumn::make('action_date'),
+                Tables\Columns\TextColumn::make('close_date'),
+                Tables\Columns\TextColumn::make('penggunaan_sparepart'),
+                Tables\Columns\TextColumn::make('keterangan'),
             ]);
     }
 }

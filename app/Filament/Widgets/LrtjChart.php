@@ -6,6 +6,7 @@ use Filament\Widgets\ChartWidget;
 
 class LrtjChart extends ChartWidget
 {
+    protected int | string | array $columnSpan = 'full';
     protected static ?string $heading = 'Grafik Gangguan LRV per system';
     protected static ?int $sort = 0;
     protected function getData(): array

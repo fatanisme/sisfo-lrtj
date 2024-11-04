@@ -79,6 +79,10 @@ class MonitoringPerawatanResource extends Resource
                     ->label('Tanggal Perawatan')
                     ->searchable()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('lrv.lrv')
+                    ->label('LRV')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('jenis_perawatan')
                     ->label('Jenis Perawatan')
                     ->searchable()

@@ -28,6 +28,8 @@ class MonitoringPerawatanToday extends BaseWidget
             ->columns([
                 Tables\Columns\TextColumn::make('tgl_perawatan')
                     ->label('Tanggal Perawatan'),
+                Tables\Columns\TextColumn::make('lrv.lrv')
+                    ->label('LRV'),
                 Tables\Columns\TextColumn::make('jenis_perawatan')
                     ->label('Jenis Perawatan'),
                 Tables\Columns\TextColumn::make('durasi')

@@ -33,15 +33,15 @@ class GangguanResource extends Resource
         });
         return $form
             ->schema([
-                Forms\Components\DateTimePicker::make('tgl_gangguan')
+                Forms\Components\DatePicker::make('tgl_gangguan')
                     ->label('Tanggal Gangguan')
                     ->default(now())
                     ->required(),
-                Forms\Components\DateTimePicker::make('action_date')
+                Forms\Components\DatePicker::make('action_date')
                     ->label('Action Date')
                     ->default(now())
                     ->required(),
-                Forms\Components\DateTimePicker::make('close_date')
+                Forms\Components\DatePicker::make('close_date')
                     ->label('Close Date')
                     ->default(now())
                     ->required(),
@@ -94,7 +94,7 @@ class GangguanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('tgl_gangguan')->translateLabel()->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('tgl_gangguan')->translateLabel()->sortable()->searchable()->date('d-m-Y'),
                 Tables\Columns\TextColumn::make('lrv.lrv')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('kabin')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('informasi_gangguan')->sortable()->searchable(),
